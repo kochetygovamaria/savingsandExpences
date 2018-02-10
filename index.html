@@ -45,7 +45,7 @@
 </head>
 
 
-<body ng-app="myApp" ng-controller="myCtrl">
+<body ng-app="myApp">
         <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
                 <header class="mdl-layout__header">
                   <div class="mdl-layout__header-row">
@@ -160,10 +160,16 @@
                                             <div class="mdl-card__supporting-text" >
                                                   
                                                     Full Name: {{firstName + " " + lastName}}
-                                                    <canvas id="line" class="chart chart-line" chart-data="data"
-                                                    chart-labels="labels" chart-series="series" chart-options="options"
-                                                    chart-dataset-override="datasetOverride" chart-click="onClick">
+                                                    <div ng-controller="myCtrl">
+                                                    <div class="panel panel-default">
+                                                            <div class="panel-heading">Line Chart</div>
+                                                            <div class="panel-body"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+                                                              <canvas id="line" class="chart chart-line ng-isolate-scope" chart-data="data" chart-labels="labels" chart-click="onClick" chart-hover="onHover" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" height="522" width="1046" style="display: block; width: 523px; height: 261px;"></canvas>
+                                                            </div>
+                                                          </div>
+                                                
                                             </canvas>
+                                            </div>
                                             </div>
                                             <div class="mdl-card__actions mdl-card--border">
                                               <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
