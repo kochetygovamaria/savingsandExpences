@@ -1,4 +1,4 @@
-var app = angular.module('myapp', ['ngRoute']);
+var app = angular.module('myApp', ['ngRoute']);
 app.config(["$routeProvider", function($routeProvider) {
     $routeProvider.
       when('/', {
@@ -9,7 +9,7 @@ app.config(["$routeProvider", function($routeProvider) {
           redirectTo: '/'
       });
 }]);
-app.controller('myCtrl', function($scope) {
+app.controller('myCtrl', ['$scope', function($scope) {
     $scope.firstName= "John";
     $scope.lastName= "Doe";
     $scope.savings1="236";
