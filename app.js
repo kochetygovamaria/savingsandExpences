@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['ngRoute']);
+var app = angular.module('myApp', ['ngRoute','chart.js']);
 app.config(["$routeProvider", function($routeProvider) {
     $routeProvider.
       when('/', {
