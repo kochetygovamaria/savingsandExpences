@@ -1,4 +1,14 @@
 var app = angular.module('myapp', ['ngRoute']);
+app.config(["$routeProvider", function($routeProvider) {
+    $routeProvider.
+      when('/', {
+          templateUrl: 'index.html',
+          controller: 'myCtrl'
+      }).
+      otherwise({
+          redirectTo: '/'
+      });
+}]);
 app.controller('myCtrl', function($scope) {
     $scope.firstName= "John";
     $scope.lastName= "Doe";
