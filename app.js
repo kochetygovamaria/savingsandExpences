@@ -9,7 +9,7 @@ app.config(["$routeProvider", function($routeProvider) {
           redirectTo: '/'
       });
 }]);
-app.controller('myCtrl', ['$scope', function($scope) {
+app.controller('myCtrl', function($scope) {
     $scope.firstName= "John";
     $scope.lastName= "Doe";
     $scope.savings1="236";
