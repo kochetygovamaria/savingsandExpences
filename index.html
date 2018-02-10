@@ -156,7 +156,12 @@
                                                 <div class="mdl-card__title mdl-card--expand">
                                                                                                                                                         
                                                     </div>
-                                                    <div class="mdl-card__supporting-text" style="width: 94%;"></div>
+                                                    <div class="mdl-card__supporting-text" style="width: 94%;">
+
+                                                            <div class="chart">
+                                                                    <canvas chart-line chart-colors="vm.chart.colors" chart-data="vm.chart.data" chart-labels="vm.chart.labels"  chart-options="vm.chart.options" >
+                                                                  </div>
+                                                    </div>
                                             </div>
                                     </div>
                                   </div>
@@ -171,12 +176,14 @@
                                             <div class="mdl-card__supporting-text" >
                                                   
                                                     Full Name: {{firstName + " " + lastName}}
-                                                  
-                                                            <div class="chart">
-                                                                    <h1>{{vm.chart.name}}</h1>
-                                                                    <canvas chart-line chart-colors="vm.chart.colors" chart-data="vm.chart.data" chart-labels="vm.chart.labels" chart-series="vm.chart.series" chart-options="vm.chart.options" >
-                                                                  </div>
-                                          
+                                                    <div class="col-lg-6 col-sm-12 ng-scope" id="doughnut-chart" ng-controller="DoughnutCtrl">
+                                                            <div class="panel panel-default">
+                                                              <div class="panel-heading">Doughnut Chart</div>
+                                                              <div class="panel-body"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+                                                                <canvas id="doughnut" class="chart chart-doughnut chart-xs ng-isolate-scope" chart-data="data" chart-labels="labels" height="522" width="1046" style="display: block; width: 523px; height: 261px;"></canvas>
+                                                              </div>
+                                                            </div>
+                                                          </div>
                                             </div>
                                             <div class="mdl-card__actions mdl-card--border">
                                               <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">

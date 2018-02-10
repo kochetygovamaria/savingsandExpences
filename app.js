@@ -23,18 +23,16 @@ app.controller('myCtrl', function($scope) {
     $scope.savingsDescription4="New honda Civic";
 
 
-    var randomScalingFactor = () => Math.round(Math.random() * 100);
+   var randomScalingFactor = () => Math.round(Math.random() * 100);
   var randomColorFactor = () => Math.round(Math.random() * 255);
   var randomColor = opacity => 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',' + (opacity || '1') + ')';
 
   this.chart = {
     name: 'Chart',
     labels: ['Jan', 'Feb', 'Mar', 'May'],
-    series: ['2014', '2015', '2016'],
+    
     data: [
       [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
-      [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
-      [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
     ],
     colors: [randomColor(), randomColor(), randomColor()],
     
@@ -46,4 +44,14 @@ app.controller('myCtrl', function($scope) {
       pointRadius: 0
     }
   }
+
+  
 });
+
+app.controller("DoughnutCtrl", function ($scope) {
+    $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
+    $scope.data = [300, 500, 100];
+  });
+
+
+              
