@@ -1,14 +1,15 @@
-var app = angular.module('myApp', ['ngRoute','chart.js']);
-app.config(["$routeProvider", function($routeProvider) {
-    $routeProvider.
-      when('/', {
-          templateUrl: 'index.html',
-          controller: 'myCtrl'
-      }).
-      otherwise({
-          redirectTo: '/'
-      });
-}]);
+var app = angular.module('myApp', ["chart.js"]);
+app.config(['ChartJsProvider', function (ChartJsProvider) {
+    // Configure all charts
+    ChartJsProvider.setOptions({
+      colours: ['#FF5252', '#FF8A80'],
+      responsive: false
+    });
+    // Configure all line charts
+    ChartJsProvider.setOptions('Line', {
+      datasetFill: false
+    });
+  }])
 app.controller('myCtrl', function($scope) {
     $scope.firstName= "John";
     $scope.lastName= "Doe";
