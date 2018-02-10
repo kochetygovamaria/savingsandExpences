@@ -6,7 +6,11 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
 <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.min.js"></script>
+<script  type="text/javascript" src="app.js"></script>
 <!-- Bootstrap Material Design -->
 
 <style>
@@ -45,7 +49,7 @@
 </head>
 
 
-<body ng-app="myApp">
+<body ng-app="myApp" ng-controller="myCtrl as vm">
         <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
                 <header class="mdl-layout__header">
                   <div class="mdl-layout__header-row">
@@ -160,16 +164,12 @@
                                             <div class="mdl-card__supporting-text" >
                                                   
                                                     Full Name: {{firstName + " " + lastName}}
-                                                    <div ng-controller="myCtrl">
-                                                    <div class="panel panel-default">
-                                                            <div class="panel-heading">Line Chart</div>
-                                                            <div class="panel-body"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
-                                                              <canvas id="line" class="chart chart-line ng-isolate-scope" chart-data="data" chart-labels="labels" chart-click="onClick" chart-hover="onHover" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" height="522" width="1046" style="display: block; width: 523px; height: 261px;"></canvas>
-                                                            </div>
-                                                          </div>
-                                                
-                                            </canvas>
-                                            </div>
+                                                  
+                                                            <div class="chart">
+                                                                    <h1>{{vm.chart.name}}</h1>
+                                                                    <canvas chart-line chart-colors="vm.chart.colors" chart-data="vm.chart.data" chart-labels="vm.chart.labels" chart-series="vm.chart.series" chart-options="vm.chart.options" >
+                                                                  </div>
+                                          
                                             </div>
                                             <div class="mdl-card__actions mdl-card--border">
                                               <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
@@ -238,8 +238,7 @@ var myNewChart = new Chart(ctx , {
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.min.js"></script>
  <script  type="text/javascript" src="app.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-charts/0.2.7/angular-charts.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-charts/0.2.7/angular-charts.min.js"></script>
-<script src="Chart.js"></script>
+
+
 </body>
 </html>
