@@ -1,4 +1,5 @@
-var app = angular.module('myApp', ['chart.js', "ngRoute"]);
+var app = angular.module('myApp', angular.module('myApp',[
+    'ngRoute', 'chart.js' ]));
 app.controller('myCtrl', function($scope) {
     $scope.firstName= "John";
     $scope.lastName= "Doe";
