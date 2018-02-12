@@ -10,6 +10,8 @@ app.config(['ChartJsProvider', function (ChartJsProvider) {
       datasetFill: false
     });
   }])
+
+
 app.controller('myCtrl', function($scope) {
     $scope.firstName= "John";
     $scope.lastName= "Doe";
@@ -28,7 +30,7 @@ app.controller('myCtrl', function($scope) {
   var randomColor = opacity => 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',' + (opacity || '1') + ')';
 
   this.chart = {
-    name: 'Chart',
+    name: 'Saving',
     labels: ['Jan', 'Feb', 'Mar', 'May'],
     
     data: [
